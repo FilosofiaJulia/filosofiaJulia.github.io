@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>Summary | profile</title>
+    <meta name="description" content="The final project of the course `Junior Front End Developer` by Julia Oreshkina, student DL Academy">
+
+    <script>
+      var docElement = document.documentElement;
+      docElement.className = docElement.className.replace(/\bno-js\b/, '') + ' js';
+    </script>
+
+    <link href="css/style.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header container">
+    <nav class="header__nav">
+        <ul class="header__list">
+            <li class="header__item">
+                <a class="header__link header__home-link_js" href="/">Home</a>
+            </li>
+            <li class="header__item">
+                <a class="header__link header__blog-link_js" href="./blog.html">My blog</a>
+            </li>
+            <li class="header__item header__item-profile_js visually-hidden">
+                <a class="header__link header__profile-link header__profile-link_js" href="./profile.html">My profile</a>
+            </li>
+            <li class="header__item header__item-sign-out_js visually-hidden">
+                <button class="header__btn header__sign-out-btn header__sign-out-btn_js" type="button">Sign out</button>
+            </li>
+            <li class="header__item header__item-login_js">
+                <button class="header__btn header__login-btn header__login-btn_js" type="button">Sign in</button>
+            </li>
+            <li class="header__item header__item-reg_js">
+                <button class="header__btn header__reg-btn header__reg-btn_js" type="button">Register</button>
+            </li>
+        </ul>
+    </nav>
+    <nav class="header__burger visually-hidden">
+        <button class="btn-close header__burger-btn-close header__burger-btn-close_js" type="button" tabindex="0" aria-label="close burger menu"></button>
+        <ul class="header__burger-list">
+            <li class="header__burger-item">
+                <a class="header__link header__burger-link header__burger-home-link_js" href="/">Home</a>
+            </li>
+            <li class="header__burger-item">
+                <a class="header__link header__burger-link header__burger-blog-link_js" href="./blog.html">My blog</a>
+            </li>
+            <li class="header__burger-item header__burger-profile_js visually-hidden">
+                <a class="header__link header__burger-link header__burger-profile-link_js" href="./profile.html">My profile</a>
+            </li>
+            <li class="header__burger-item header__burger-sign-out_js visually-hidden">
+                <button class="header__btn header__burger-btn header__burger-sign-out-btn header__burger-sign-out-btn_js" type="button">Sign out</button>
+            </li>
+            <li class="header__burger-item header__burger-login_js">
+                <button class="header__btn header__burger-btn header__burger-login-btn_js" type="button">Sign in</button>
+            </li>
+            <li class="header__burger-item header__burger-reg_js">
+                <button class="header__btn header__burger-btn header__burger-reg-btn_js" type="button">Register</button>
+            </li>
+        </ul>
+    </nav>
+    <button class="header__burger-btn-open_pages header__burger-btn-open header__burger-btn-open_js" type="button" aria-label="open burger menu"></button>
+</header>
+
+   <main class="profile container">
+    <h1 class="profile__title">My profile</h1>
+    <div class="profile__inner">
+        <div class="profile__avatar-wrapper profile__avatar-wrapper_js"></div>
+        <div class="profile__data">
+            <p class="profile__item">Name: <span class="profile__value profile__name_js"></span></p>
+            <p class="profile__item">Surame: <span class="profile__value profile__surname_js"></span></p>
+            <p class="profile__item">Email: <span class="profile__value profile__email_js"></span></p>
+            <p class="profile__item">Password: <span class="profile__value profile__password_js">****************</span></p>
+            <p class="profile__item">Location: <span class="profile__value profile__location_js"></span></p>
+            <p class="profile__item">Age: <span class="profile__value profile__age_js"></span></p>
+            <button class="button profile__change-password-btn profile__change-password-btn_js" type="button" tabindex="0" aria-label="open popup for change password">Change password</button>
+            <button class="button profile__change-data-btn profile__change-data-btn_js" type="button" tabindex="0" aria-label="open popup for change data of profile">Change other data</button>
+            <button class="button profile__delete-btn profile__delete-btn_js" type="button" tabindex="0" aria-label="delete account">Delete account</button>
+        </div>
+    </div>
+   </main>
+   <div class="popup popup-form-edit-password visually-hidden popup-form-edit-password_js">
+    <div class="popup-form-edit-password__wrapper">
+      <form class="form form-edit-password" name="editPasswordForm" novalidate>
+    <div class="form__inner">
+      <input class="form__input_js form__input-focus_js" type="password" name="oldPassword" id="old-password" aria-label="enter the current password" required>
+      <label class="form__label" for="old-password">Old password</label>
+    </div>
+    <div class="form__inner">
+      <input class="form__input_js" type="password" name="newPassword" id="new-password" aria-label="enter the new password" autocomplete="on" required>
+        <label class="form__label" for="new-password">New password</label>
+    </div>
+    <div class="form__inner">
+      <input class="form__input_js" type="password" name="repeatPassword" id="confirm-password" aria-label="confirm the new password" required>
+      <label class="form__label" for="confirm-password">Repeat new password</label>
+    </div>
+      <button class="button form-edit-password__btn form-edit-password__btn_js" type="submit" tabindex="0" aria-label="save new password">change password</button>
+</form>
+      <button class="btn-close popup-form-edit-password__btn-close popup-form-edit-password__btn-close_js" type="button" tabindex="0" aria-label="close editing password form"></button>
+    </div>
+  </div>
+  <div class="popup popup-form-edit-data visually-hidden popup-form-edit-data_js">
+    <div class="popup-form-edit-data__wrapper">
+      <form class="form form-edit-data" name="editDataForm" novalidate>
+    <div class="form__inner">
+      <input class="form__input_js form__input-focus_js" type="email" name="email" id="new-email">
+      <label class="form__label" for="new-email">Email</label>
+    </div>
+    <div class="form__inputs-wrap">
+      <div class="form__inner">
+          <input class="form__input_js" type="text" name="name" id="new-name">
+          <label class="form__label" for="new-name">Name</label>
+        </div>
+        <div class="form__inner">
+          <input class="form__input_js" type="text" name="surname" id="new-surname">
+          <label class="form__label" for="new-surname">Surname</label>
+        </div>
+    </div>
+    <div class="form__inputs-wrap">
+      <div class="form__inner">
+          <input class="form__input_js" type="text" name="location" id="new-location">
+          <label class="form__label" for="new-location">Location</label>
+        </div>
+        <div class="form__inner">
+          <input class="form__input_js" type="number" name="age" id="new-age">
+          <label class="form__label" for="new-age">Age</label>
+        </div>
+    </div>
+    <div class="form__inner form-edit-data__inner">
+      <input class="form-edit-data__input-file form-edit-data__input-file_js" type="file" name="avatar" id="photo">
+      <label class="form__label form-edit-data__label-file" for="photo">Profile picture
+        <span class="form-edit-data__file-icon"></span>
+        <span class="form-edit-data__file-text form-edit-data__file-text_js">Choose a file...</span>
+      </label>
+    </div>
+      <button class="button form-edit-data__btn form-edit-data__btn_js" type="submit" tabindex="0" aria-label="save new data of profile">Submit changes</button>
+</form>
+      <button class="btn-close popup-form-edit-data__btn-close popup-form-edit-data__btn-close_js" type="button" tabindex="0" aria-label="close editing profile data form"></button>
+    </div>
+  </div>
+  <div class="server-message_js server-message visually-hidden">
+        
+        <button class="btn-close server-message__btn-close server-message__btn-close_js" type="button" tabindex="0" aria-label="close server message"></button>
+</div>
+    <script src="js/app.js" defer="defer"></script>
+    <script src="js/common.js"></script>
+    <script src="js/profile.js"></script>
+  </body>
+</html>

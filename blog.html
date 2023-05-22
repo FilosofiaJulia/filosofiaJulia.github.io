@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>DL Academy</title>
+    <meta name="description" content="The final project of the course `Junior Front End Developer` by Julia Oreshkina, student DL Academy">
+
+    <script>
+      var docElement = document.documentElement;
+      docElement.className = docElement.className.replace(/\bno-js\b/, '') + ' js';
+    </script>
+    <link href="css/style.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header container">
+    <nav class="header__nav">
+        <ul class="header__list">
+            <li class="header__item">
+                <a class="header__link header__home-link_js" href="/">Home</a>
+            </li>
+            <li class="header__item">
+                <a class="header__link header__blog-link_js" href="./blog.html">My blog</a>
+            </li>
+            <li class="header__item header__item-profile_js visually-hidden">
+                <a class="header__link header__profile-link header__profile-link_js" href="./profile.html">My profile</a>
+            </li>
+            <li class="header__item header__item-sign-out_js visually-hidden">
+                <button class="header__btn header__sign-out-btn header__sign-out-btn_js" type="button">Sign out</button>
+            </li>
+            <li class="header__item header__item-login_js">
+                <button class="header__btn header__login-btn header__login-btn_js" type="button">Sign in</button>
+            </li>
+            <li class="header__item header__item-reg_js">
+                <button class="header__btn header__reg-btn header__reg-btn_js" type="button">Register</button>
+            </li>
+        </ul>
+    </nav>
+    <nav class="header__burger visually-hidden">
+        <button class="btn-close header__burger-btn-close header__burger-btn-close_js" type="button" tabindex="0" aria-label="close burger menu"></button>
+        <ul class="header__burger-list">
+            <li class="header__burger-item">
+                <a class="header__link header__burger-link header__burger-home-link_js" href="/">Home</a>
+            </li>
+            <li class="header__burger-item">
+                <a class="header__link header__burger-link header__burger-blog-link_js" href="./blog.html">My blog</a>
+            </li>
+            <li class="header__burger-item header__burger-profile_js visually-hidden">
+                <a class="header__link header__burger-link header__burger-profile-link_js" href="./profile.html">My profile</a>
+            </li>
+            <li class="header__burger-item header__burger-sign-out_js visually-hidden">
+                <button class="header__btn header__burger-btn header__burger-sign-out-btn header__burger-sign-out-btn_js" type="button">Sign out</button>
+            </li>
+            <li class="header__burger-item header__burger-login_js">
+                <button class="header__btn header__burger-btn header__burger-login-btn_js" type="button">Sign in</button>
+            </li>
+            <li class="header__burger-item header__burger-reg_js">
+                <button class="header__btn header__burger-btn header__burger-reg-btn_js" type="button">Register</button>
+            </li>
+        </ul>
+    </nav>
+    <button class="header__burger-btn-open_pages header__burger-btn-open header__burger-btn-open_js" type="button" aria-label="open burger menu"></button>
+</header>
+
+    <main class="blog container">
+      <h1 class="blog__title">My blog</h1>
+      <form class="filter" name="filterForm">
+    <fieldset class="filter__fieldset filter__tags">
+      <legend class="filter__subtitle">Tags</legend>
+      <div class="filter__tags-inner filter__tags-inner_js"></div>
+    </fieldset>
+    <fieldset class="filter__fieldset filter__views">
+      <legend class="filter__subtitle">Views</legend>
+      <input type="radio" id="views-0" name="views" value="100-500" tabindex="0">
+      <label class="filter__radio-label" for="views-0">100-500</label>
+
+      <input type="radio" id="views-1" name="views" value="500-1000">
+      <label class="filter__radio-label" for="views-1">500-1000</label>
+
+      <input type="radio" id="views-2" name="views" value="1000-2000">
+      <label class="filter__radio-label" for="views-2">1000-2000</label> 
+    </fieldset>
+    <fieldset class="filter__fieldset filter__comments">
+      <legend class="filter__subtitle">Comments</legend>
+      <input type="checkbox" id="comments-0" name="comments" value="0-0">
+      <label class="filter__checkbox-label" for="comments-0">0</label>
+
+      <input type="checkbox" id="comments-1" name="comments" value="0-1">
+      <label class="filter__checkbox-label" for="comments-1">0-1</label>
+
+      <input type="checkbox" id="comments-2" name="comments" value="1-50">
+      <label class="filter__checkbox-label" for="comments-2">1-50</label> 
+    </fieldset>
+    <fieldset class="filter__fieldset filter__count-show">
+      <legend class="filter__subtitle">How show?</legend>
+      <input type="radio" id="show-0" name="countShow" value="5">
+      <label class="filter__radio-label" for="show-0">show 5</label>
+
+      <input type="radio" id="show-1" name="countShow" value="10">
+      <label class="filter__radio-label" for="show-1">show 10</label>
+    </fieldset>
+    <fieldset class="filter__fieldset filter__sorts">
+      <legend class="filter__subtitle">Sort by</legend> 
+      <input type="radio" name="sorts" id="sort-date" value="date">
+      <label class="filter__radio-label" for="sort-date">date</label>
+
+      <input type="radio" name="sorts" id="sort-title" value="title">
+      <label class="filter__radio-label" for="sort-title">title</label>
+
+      <input type="radio" name="sorts" id="sort-views" value="views">
+      <label class="filter__radio-label" for="sort-views">views</label> 
+    </fieldset>
+    <div class="filter__reset">
+      <p class="filter__reset-subtitle">reset form</p>
+      <button class="button filter__reset-btn filter__reset-btn_js" type="reset" tabindex="0" aria-label="search post">Reset</button>
+    </div>
+    <div class="filter__search">
+      <input type="text" name="name" class="filter__search-input" id="text-search">
+      <label class="filter__search-label" for="text-search"></label>
+      <button class="button filter__search-btn filter__search-btn_js" type="submit" tabindex="0" aria-label="search posts">Search</button>
+    </div>
+  </form>
+      <div class="posts posts_js"></div>
+      <div class="blog__control-panel">
+        <button type="button" class="blog__btn blog__btn-back_js" aria-label="switch to the previous blog page"></button>
+        <div class="blog__pagination blog__pagination_js"></div>
+        <button type="button" class="blog__btn blog__btn-next_js" aria-label="switch to the blog page"></button>
+      </div>
+    </main>
+    <footer class="footer footer_onBlog">
+  <h2 class="footer__title">Contacts</h2>
+  <p class="footer__desc">Want to know more or just chat? You are welcome!</p>
+  <button class="footer__btn-connect footer__btn-connect_js" type="button">Send message</button>
+  <ul class="footer__list">
+    <li class="footer__item"><a class="footer__link" href="#">Instagram</a></li>
+    <li class="footer__item"><a class="footer__link" href="#">Vk</a></li>
+    <li class="footer__item"><a class="footer__link" href="#">Telegram</a></li>
+    <li class="footer__item"><a class="footer__link" href="#">Mail</a></li>
+    <li class="footer__item"><a class="footer__link" href="#">GitHub</a></li>
+    <li class="footer__item"><a class="footer__link" href="#">Phone</a></li>
+  </ul>
+  <a class="footer__design-link" href="https://dlacademy.ru/">Design by <span>DL Academy</span></a>
+  <p class="footer__author"> Program code from Julia</p>
+</footer>
+
+    <button class="button-to-top button-to-top_js visually-hidden" type="button" aria-label="scroll to top"></button>
+    <div class="popup popup-login-form popup-login-form_js visually-hidden">
+      <div class="popup__login-form-wrapper">
+        <form class="form login-form" action="#" name="loginForm" novalidate> 
+  <div class="form__inner">
+    <input class="form__input_js form__input-focus_js" type="email" name="email" id="newEmail" required>
+    <label class="form__label" for="newEmail">Email</label>
+  </div>
+    <div class="form__inner">
+      <input class="form__input_js" type="password" name="password" id="currentPassword" autocomplete="on" required>
+      <label class="form__label" for="currentPassword">Password</label>
+    </div>
+      <button class="button login-form__btn login-form__btn_js" type="submit" tabindex="0" aria-label="sign in">Log in</button>
+</form>
+        <button class="btn-close popup-login-form__btn-close popup-login-form__btn-close_js" type="button" tabindex="0" aria-label="close log in form"></button>
+      </div>
+    </div>
+    <div class="popup visually-hidden popup-registration-form popup-registration-form_js">
+      <div class="popup__wrapper">
+        <form class="form registration-form" action="#" name="regForm" novalidate>
+  <div class="form__inner">
+    <input class="form__input_js form__input-focus_js" type="email" name="email" id="email" aria-label="checkbox is not selected" required>
+    <label class="form__label" for="email">Email</label>
+  </div>
+  <div class="form__inputs-wrap">
+    <div class="form__inner">
+      <input class="form__input_js" type="text" name="name" id="userName" aria-label="checkbox is not selected" required>
+      <label class="form__label" for="userName">Name</label>
+    </div>
+    <div class="form__inner">
+      <input class="form__input_js" type="text" name="surname" id="surname" aria-label="checkbox is not selected" required>
+      <label class="form__label" for="surname">Surname</label>
+    </div>
+  </div> 
+  <div class="form__inputs-wrap">
+    <div class="form__inner">
+      <input class="form__input_js" type="password" name="password" id="password" aria-label="checkbox is not selected" autocomplete="on" required>
+      <label class="form__label" for="password">Password</label>
+    </div>
+    <div class="form__inner">
+      <input class="form__input_js" type="password" name="repeatPassword" id="repeatPassword" aria-label="checkbox is not selected" autocomplete="off" required>
+      <label class="form__label" for="repeatPassword">Repeat password</label>
+    </div>
+  </div>
+  <div class="form__inputs-wrap">
+    <div class="form__inner">
+      <input class="form__input_js" type="text" name="location" id="location" aria-label="checkbox is not selected" required>
+      <label class="form__label" for="location">Location</label>
+    </div>
+    <div class="form__inner">
+      <input class="form__input_js" type="number" name="age" id="age" aria-label="checkbox is not selected" required>
+      <label class="form__label" for="age">Age</label>
+    </div>
+  </div>
+    <div class="checkbox">
+    <input class="checkbox__input checkbox__input_js" type="checkbox" id="agreement" name="agreement">
+    <label class="checkbox__label @@addClassLabel" for="agreement">
+        By clicking on the button, you consent to the processing of your personal data
+    </label>
+</div>
+    <button class="button registration-form__btn registration-form__btn_js" disabled="disabled" type="submit" tabindex="0" aria-label="Sign up">Sign up</button>
+</form>
+        <button class="btn-close popup-registration-form__btn-close popup-registration-form__btn-close_js" type="button" tabindex="0" aria-label="close registration form"></button>
+      </div>
+    </div>
+    <div class="popup popup-connect-form popup-connect-form_js visually-hidden">
+      <div class="popup__wrapper">
+        <form class="form connect-form" action="#" name="connectForm" novalidate>
+  <div class="form__inputs-wrap">
+    <div class="form__inner">
+      <input class="form__input_js form__input-focus_js" type="text" name="fullName" id="fullName" aria-label="checkbox is not selected" required>
+      <label class="form__label" for="fullName">What is your name?</label>
+    </div>
+    <div class="form__inner">
+      <input class="form__input_js" type="text" name="subject" id="subject" aria-label="checkbox is not selected" required>
+      <label class="form__label" for="subject">Message subject</label>
+    </div> 
+  </div>
+  <div class="form__inputs-wrap">
+    <div class="form__inner">
+      <input class="form__input_js" type="email" name="email" id="current-email" aria-label="checkbox is not selected" required>
+      <label class="form__label" for="current-email">Your Email</label>
+    </div>
+    <div class="form__inner">
+      <input class="form__input_js" type="tel" name="phone" id="phone" aria-label="checkbox is not selected" required>
+      <label class="form__label" for="phone">Your mobile phone</label>
+    </div>
+  </div>  
+  <div class="form__inner">
+    <textarea name="message" id="message" cols="30" rows="6"></textarea>
+    <label class="form__label" for="message">What do you want to discuss with me?</label>
+  </div>
+    <div class="checkbox">
+    <input class="checkbox__input checkbox__input_js" type="checkbox" id="connectAgreement" name="connectAgreement">
+    <label class="checkbox__label @@addClassLabel" for="connectAgreement">
+        By clicking on the button, you consent to the processing of your personal data
+    </label>
+</div>
+    <button class="button connect-form__btn connect-form__btn_js" disabled="disabled" type="submit" tabindex="0" aria-label="Send message">Send</button>
+</form>
+        <button class="btn-close popup-connect-form__btn-close popup-connect-form__btn-close_js" type="button" tabindex="0" aria-label="close form of send message"></button>
+      </div>
+    </div>
+    <div class="server-message_js server-message visually-hidden">
+        
+        <button class="btn-close server-message__btn-close server-message__btn-close_js" type="button" tabindex="0" aria-label="close server message"></button>
+</div>
+    <script src="js/common.js"></script>
+    <script src="js/blog.js"></script>
+  </body>
+</html>
