@@ -1,5 +1,4 @@
-//https://tympanus.net/codrops/2021/10/04/creating-3d-characters-in-three-js/
-//https://codepen.io/filosofiajulia/pen/MWNPjaY?editors=1010
+//https://tympanus.net/codrops/2021/10/04/creating-3d-characters-in-three-js/ - взят за основу
 /* 
 Используя three.js сделайте любой 3D-объект, используя документацию - https://threejs.org/docs/ 
 Основные условия:
@@ -79,7 +78,7 @@ class Figure {
 	constructor(params) {
 		this.params = {
 			x: 0,
-			y: -0.5,
+			y: -1,
 			z: 0,
 			ry: 0,
 			angle: 0,
@@ -102,7 +101,7 @@ class Figure {
 	createBody() {
 		this.body = new THREE.Group();
 		const geometry = new THREE.BoxGeometry(1, 1.5, 0.5);
-        const bodyMaterial = new THREE.MeshLambertMaterial({ color: 0x4DDD4D });
+        	const bodyMaterial = new THREE.MeshLambertMaterial({ color: 0x4DDD4D });
 		const bodyMain = new THREE.Mesh(geometry, bodyMaterial);
 		
 		this.body.add(bodyMain);
@@ -112,25 +111,25 @@ class Figure {
 	};
 	
 	createHead() {
-        // Create a new group for the head
-        this.head = new THREE.Group();
-        
-        // Create the main sphere of the head and add to the group
-        const geometry = new THREE.SphereGeometry(0.7, 24, 12,);
-        const headMain = new THREE.Mesh(geometry, material);
-        this.head.add(headMain);
-        
-        // Add the head group to the figure
-        this.group.add(this.head);
-        
-        // Position the head group
-        this.head.position.y = 1.55;
-        
-        // Add the eyes by calling the function we already made
-        this.createEyes();
-       this.createNose();
-       this.createMouth();
-       this.createHair();
+	        // Create a new group for the head
+	        this.head = new THREE.Group();
+	        
+	        // Create the main sphere of the head and add to the group
+	        const geometry = new THREE.SphereGeometry(0.7, 24, 12,);
+	        const headMain = new THREE.Mesh(geometry, material);
+	        this.head.add(headMain);
+	        
+	        // Add the head group to the figure
+	        this.group.add(this.head);
+	        
+	        // Position the head group
+	        this.head.position.y = 1.55;
+	        
+	        // Add elements of head by calling functions we already made
+	        this.createEyes();
+	       this.createNose();
+	       this.createMouth();
+	       this.createHair();
 	};
 	
 	createArms() {
@@ -159,55 +158,51 @@ class Figure {
 			armGroup.rotation.z = degreesToRadians(30 * m);
 		}
 	};
-
-    createNose() {
-        const geometry = new THREE.SphereGeometry(0.1, 12, 8);
-		const nose = new THREE.Mesh(geometry, material);
-        this.head.add(nose);
-        nose.position.z = 0.6;
-        nose.position.y = -0.2;
+	    createEyes() {
+		const eyes = new THREE.Group();
+		const geometry = new THREE.SphereGeometry(0.12, 12, 8);
+		// Define the eye material
+		const material = new THREE.MeshLambertMaterial({ color: 0x45C5C5 });
+		
+		for(let i = 0; i < 2; i++) {
+		    const eye = new THREE.Mesh(geometry, material);
+		    const m = (i % 2) === 0 ? 1 : -1;
+		    
+		    // Add the eye to the group
+		    eyes.add(eye);
+		    
+		    // Position the eye
+		    eye.position.x = 0.25 * m;
+		};
+	
+	        // add eyes to head
+	        this.head.add(eyes);
+	        eyes.position.z = 0.65;
+	
+		};
+	createNose() {
+	        const geometry = new THREE.SphereGeometry(0.1, 12, 8);
+			const nose = new THREE.Mesh(geometry, material);
+	        this.head.add(nose);
+	        nose.position.z = 0.6;
+	        nose.position.y = -0.2;
 	};
     createMouth() {
-        const geometry = new THREE.BoxGeometry(0.25, 0.1, 0.2);
-        const material = new THREE.MeshLambertMaterial({ color: 0xFF7373 });
+	        const geometry = new THREE.BoxGeometry(0.25, 0.1, 0.2);
+	        const material = new THREE.MeshLambertMaterial({ color: 0xFF7373 });
 		const mouth = new THREE.Mesh(geometry, material);
-        this.head.add(mouth);
-        mouth.position.z = 0.45;
-        mouth.position.y = -0.4;
+	        this.head.add(mouth);
+	        mouth.position.z = 0.45;
+	        mouth.position.y = -0.4;
 	};
     createHair() {
-        const geometry = new THREE.BoxGeometry(0.1, 1, 1.2);
-        const material = new THREE.MeshLambertMaterial({ color: 0xFFE700 });
+	        const geometry = new THREE.BoxGeometry(0.1, 1, 1.2);
+	        const material = new THREE.MeshLambertMaterial({ color: 0xFFE700 });
 		const hair = new THREE.Mesh(geometry, material);
-        this.head.add(hair);
-        hair.position.z = -0.2;
-        hair.position.y = 0.35;
-        hair.rotation.x = degreesToRadians(-20);
-	};
-
-    createEyes() {
-		const eyes = new THREE.Group();
-	    const geometry = new THREE.SphereGeometry(0.12, 12, 8);
-		// Define the eye material
-	    const material = new THREE.MeshLambertMaterial({ color: 0x45C5C5 });
-	
-        for(let i = 0; i < 2; i++) {
-            const eye = new THREE.Mesh(geometry, material);
-            const m = (i % 2) === 0 ? 1 : -1;
-            
-            // Add the eye to the group
-            eyes.add(eye);
-            
-            // Position the eye
-            eye.position.x = 0.25 * m;
-        };
-
-        // add eyes to head
-        this.head.add(eyes);
-
-        // Move the eyes forwards by half of the head depth - it might be a good idea to create a variable to do this!
-        eyes.position.z = 0.65;
-
+	        this.head.add(hair);
+	        hair.position.z = -0.2;
+	        hair.position.y = 0.35;
+	        hair.rotation.x = degreesToRadians(-20);
 	};
 
     createLegs() {
