@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Game</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/game.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header">
+                <a href="index.html" class="header__logo">Art Gallery</a>
+                <nav class="header__nav">
+                    <ul class="header__list">
+                        <li class="header__item"><a href="./index.html#my_collection" class="header__link">My collection</a></li>
+                        <li class="header__item"><a href="./game.html" class="header__link">Game</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class = 'game__wrapper'>
+            <div>
+                <button class="game__start-btn start">start</button>
+                <button class = 'game__cancel-btn'>cancel</button>
+            </div>
+            <div class="game__control_panel">
+                <button class = 'game__btn level-btn easy'>easy</button>
+                <button class = 'game__btn level-btn middle'>middle</button>
+                <button class = 'game__btn level-btn hard'>hard</button>
+                <button class = 'game__btn exit'>exit</button>
+                <button class = 'game__btn restart' disabled>restart</button>
+            </div>
+            <canvas class="game"></canvas>
+        </div>
+    </main>
+    <canvas class="fireworks" id="fireworksCanvas"></canvas>
+    <script src="../scripts/game.js"></script>
+</body>
+</html>
